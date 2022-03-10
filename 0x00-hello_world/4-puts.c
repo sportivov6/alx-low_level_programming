@@ -2,7 +2,7 @@
  * C program prints Programming is like building multilingual puzzle
  */
 
-# include <stdio.h>
+#include <stdio.h>
 
 /**
  * main -Etry point
