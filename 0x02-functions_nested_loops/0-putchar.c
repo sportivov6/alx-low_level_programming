@@ -2,7 +2,7 @@
  * 0-holberton.c
  */
 
-#include "holberton.h"
+#include "main.h"
 
 /**
  * main - Prints "_putchar" followed by a new line.
