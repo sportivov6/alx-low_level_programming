@@ -2,7 +2,7 @@
  * 100-times_table.c
  */
 
-#include "holberton.h"
+#include "main.h"
 
 /**
  * print_times_table - Prints the times table of the input, starting with 0.
