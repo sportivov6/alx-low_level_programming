@@ -3,7 +3,7 @@
 
 /**
  * main.h
- * Desc: Header filr containing protoypes for all functions used in the 0x06-pointers_arrays_strings directory.
+ * Desc: Header file
  */
 
 int _putchar(char c);
