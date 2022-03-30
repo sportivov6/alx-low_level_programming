@@ -5,7 +5,7 @@
 #include "main.h"
 
 /**
- * strlen_recursion - calculate length of a string.
+ * _strlen_recursion - calculate length of a string.
  * @s: string to use.
  *
  * Return: int.
