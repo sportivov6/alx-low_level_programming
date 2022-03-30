@@ -5,7 +5,7 @@
 #include "main.h"
 
 /**
- * pow_recursion - calculate x power y.
+ * _pow_recursion - calculate x power y.
  * @x: integer.
  * @y: integer.
  *
