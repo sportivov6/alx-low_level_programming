@@ -5,7 +5,7 @@
 #include "main.h"
 
 /**
- * strlen - length of s.
+ * _strlen - length of s.
  * @s: string.
  * @i: counter.
  *
@@ -39,7 +39,7 @@ int isPal(char *s, int st, int e)
 		return (0);
 
 	if (st < e + 1)
-		return (isPal(s, st +1, e - 1));
+		return (isPal(s, st + 1, e - 1));
 
 	return (1);
 }
@@ -48,8 +48,7 @@ int isPal(char *s, int st, int e)
  * is_palindrome - verify if a string is palindrome.
  * @s: string
  *
- * Return: 1 if true
- * 	   0 if false.
+ * Return: 1 if true 0 if false.
  */
 int is_palindrome(char *s)
 {
