@@ -3,7 +3,7 @@
  */
 
 #include<stdio.h>
-#include<sstdlib.h>
+#include<stdlib.h>
 
 /**
  * main - print the addition of numbers.
