@@ -4,32 +4,47 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
+#include "main.h"
 
 /**
  * main - print the addition of numbers.
  * @argc: array length.
- * @argv: array.
+ * @argv: array name.
  *
- * Retun: 0.
+ * Retun: 1 if a non-integer present, otherwise 0.
  */
 int main(int argc, char *argv[])
 {
-	int num, digit, sum = 0;
+	int i, j, lenght, sum;
+	char *ptr;
 
-	for (num = 1; num < argc; num++)
+	if (argc < 2)
+		printf("0\n");
+	else
 	{
-		for (digit = 0; argv[num][digit]; digit++)
+		sum = 0;
+		for (i = 1; i < argc; i++)
 		{
-			if (argv[num][digit] < '0' || argv[num][digit] > '9'))
+			ptr = argv[i];
+			length = strlen(ptr);
+
+			for (j = 0; j < length; j++)
 			{
-				printf("Error\n");
-				return (1);
+				if (isdigit(*(ptr + j)) == 0)
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
 
-			sum += atoi(argv[num]);
+
+			sum += atoi(argv[i]);
 		}
+	
+	printf("%d\n", sum);
 	}
 
-	printf("%d\n", sum);
 	return (0);
 }
