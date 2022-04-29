@@ -1,7 +1,3 @@
-/**
- * 2-str_concat.c
- */
-
 # include "main.h"
 # include <stdlib.h>
 
@@ -11,36 +7,32 @@
  * @s2: second string.
  *
  * Return: pointer to string.
- */
+ **/
 
 char *str_concat(char *s1, char *s2)
 {
-	char *s;
-	int i = 0, j = 0, k = 0;
+	char *concat_str;
+	int index, concat_index = 0, len = 0;
 
-	if (s1 != NULL)
-		for (; s1[i]; i++);
+	if (s1 == NULL)
+		s1 = "";
 
-	if (s2 != NULL)
-		for (; s2[j]; j++);
+	if (s2 == NULL)
+		s2 = "";
 
-	s = malloc(sizeof(char) * (i + j + 1));
-	
-	if (s == NULL)
+	for (index = 0; s1[index] || s2[index]; index++)
+		len++;
+
+	concat_str = malloc(sizeof(char) * len);
+
+	if (concat_str == NULL)
 		return (NULL);
 
-	while (k < i)
-	{
-		s[k] = s1[k];
-		k++;
-	}
+	for (index = 0; s1[index]; index++)
+		concat_str[concat_index++] = s1[index];
 
-	while (k < i + j)
-	{
-		s[k] = s2[k - i];
-		k++;
-	}
+	for (index = 0; s2[index]; index++)
+		concat_str[concat_index++] = s2[index];
 
-	s[k] = '\0';
-	return (s);
+	return (concat_str);
 }

@@ -1,7 +1,3 @@
-/**
- * 3-alloc_grid.c
- */
-
 #include "main.h"
 #include <stdlib.h>
 
@@ -11,36 +7,43 @@
  * @height: grid's height.
  *
  * Return: pointer to grid.
- */
+ **/
 
 int **alloc_grid(int width, int height)
 {
-	int **grid, w, h;
+	int **twoD;
+	int hgt_index, wid_index;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	grid = malloc(sizeof(int *) * height);
-	
-	if (grid == NULL)
+	twoD = malloc(sizeof(int *) * height);
+
+	if (twoD == NULL)
 		return (NULL);
 
-	for (h = 0; h < height; h++)
+	for (hgt_index = 0; hgt_index < height; hgt_index++)
 	{
-		grid[h] = malloc(sizeof(int) * width);
-		if (grid[h] == NULL)
+		twoD[hgt_index] = malloc(sizeof(int) * width);
+		
+		if (twoD[hgt_index] == NULL)
 		{
-			for (h--; h >= 0; h--)
-				free(grid[h]);
-				free(grid);
-				
-				return (NULL);
+			for (; hgt_index >= 0; hgt_index--)
+
+				free(twoD[hgt_index]);
+
+			free(twoD);
+
+			return (NULL);
 		}
+
 	}
 
-	for (h = 0; h < height; h++)
-		for (w = 0; w < width; w++)
-			grid[h][w] = 0;
+	for (hgt_index = 0; hgt_index < height; hgt_index++)
+	{
+		for (wid_index = 0; wid_index < width; wid_index++)
+			twoD[hgt_index][wid_index] = 0;
+	}
 
-	return (grid);
+	return (twoD);
 }
